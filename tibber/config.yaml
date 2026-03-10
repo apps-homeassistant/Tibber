@@ -1,0 +1,38 @@
+name: "Tibber"
+version: 0.1.0
+slug: tibber
+description: "View Tibber consumption data – log in and see the last year of data from the Tibber API"
+url: "https://github.com/apps-homeassistant/tibber"
+
+arch:
+  - amd64
+  - aarch64
+
+startup: application
+boot: auto
+init: false
+apparmor: true
+privileged: []
+full_access: false
+host_network: false
+host_dbus: false
+host_ipc: false
+host_pid: false
+hassio_api: true
+services:
+  - mqtt:want
+
+homeassistant_api: true
+ingress: true
+ingress_port: 8100
+ingress_entry: /
+panel_icon: mdi:home-lightning-bolt
+panel_title: Tibber
+
+map:
+  - type: data
+    read_only: false
+
+options: {}
+
+schema: {}
