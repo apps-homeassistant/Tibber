@@ -1,0 +1,13 @@
+configuration:
+  mqtt_host:
+    name: MQTT host
+    description: Optional. Leave empty to use the MQTT broker host detected from Home Assistant Supervisor.
+  mqtt_port:
+    name: MQTT port
+    description: Optional. Leave empty to use the MQTT broker port detected from Home Assistant Supervisor.
+  mqtt_user:
+    name: MQTT username
+    description: Optional. Leave empty to use the MQTT username detected from Home Assistant Supervisor.
+  mqtt_password:
+    name: MQTT password
+    description: Optional. Leave empty to use the MQTT password detected from Home Assistant Supervisor.

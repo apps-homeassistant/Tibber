@@ -1,0 +1,16 @@
+#!/usr/bin/with-contenv bashio
+
+bashio::log.info "Starting Tibber..."
+
+export DATA_DIR=/data
+export PORT=8100
+export FRONTEND_DIR=/app/frontend
+bashio::log.info "Web UI: PORT=${PORT} FRONTEND_DIR=${FRONTEND_DIR}"
+
+if [ ! -x /usr/local/bin/tibber_backend ]; then
+  bashio::log.fatal "Binary not found or not executable: /usr/local/bin/tibber_backend"
+  exit 1
+fi
+bashio::log.info "Launching tibber_backend on port ${PORT} (stderr/stdout below)..."
+# Backend logs to stderr; if you see 502, check that you see \"listening on 0.0.0.0:8100\" below
+exec /usr/local/bin/tibber_backend
